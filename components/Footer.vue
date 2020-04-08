@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+div
 	h1 Testin
 </template>
 
