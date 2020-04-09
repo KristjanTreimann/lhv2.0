@@ -7,17 +7,14 @@
 		.links
 			a.button--green(href="https://nuxtjs.org/" target="_blank") Documentation
 			a.button--grey(href="https://github.com/nuxt/nuxt.js" target="_blank") GitHub
-		Footer
 </template>
 
 <script>
 import Logo from "~/components/Logo.vue"
-import Footer from "../components/Footer"
 
 export default {
   components: {
-    Logo,
-    Footer
+    Logo
   }
 }
 </script>
