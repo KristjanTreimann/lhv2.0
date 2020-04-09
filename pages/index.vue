@@ -2,7 +2,7 @@
 .container
 	Header
 	Navbar
-	br
+	News
 	br
 	h1.title lhv2.0
 	h2.subtitle Kasutajaliideste disain ja arendus
@@ -16,12 +16,14 @@
 import Footer from '~/components/Footer.vue'
 import Header from '~/components/Header.vue'
 import Navbar from '~/components/Navbar.vue'
+import News from '~/components/News.vue'
 
 export default {
   components: {
 	Footer,
 	Header,
-	Navbar
+	Navbar,
+	News
   }
 }
 </script>
