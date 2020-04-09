@@ -1,5 +1,6 @@
 {
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
-    "eslint.onIgnoredFiles": "warn"
+    "eslint.onIgnoredFiles": "warn",
+    "editor.tabSize": 4
 }
