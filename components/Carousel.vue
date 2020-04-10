@@ -6,8 +6,15 @@
 </client-only>
 </template>
 <script>
+import carousel from 'v-owl-carousel'
+const carouselPlugin = process.client ? require('~/plugins/owl') : () => {}
+
 export default {
-	name: 'Carousel'
+	name: 'Carousel',
+	components: carousel,
+	created() {
+		carouselPlugin()
+	}
 }
 </script>
 <style lang="stylus">
