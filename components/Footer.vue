@@ -1,25 +1,45 @@
 <template lang="pug">
-footer
+#footer
 	.container
 		.row
-			.col-xs-12.col-md-10.col-md-offset-1.footer-navbar
-				.column-50
-					h2 Tekst siia
-					p
-						span 123456
-					.col
-						p
-							| Tekst siia
-</template>
+			.col-xs-12.col-sm-3.col-md-3.footer-mobile-accordion(v-for="link in menuLinks")
+				.row
+				h3(v-text="link.label")
+				ul.list-unstyled
+					li(v-for="sublink in link.submenu")
+						a(v-bind:href="sublink.link") {{ sublink.label }}
+			.row
+				.col-xs-12.footer-social
+					a.social(href="https://www.instagram.com/lhvpank" target="_blank")
+						include ../assets/icons/insta.svg
+					a.social(href="https://www.facebook.com/LHVPank" target="_blank")
+						include ../assets/icons/fb.svg
+					a.social(href="https://youtube.com/lhvpank" target="_blank")
+						include ../assets/icons/youtube.svg
+					a.social(href="https://soundcloud.com/lhvpodcast" target="_blank")
+						include ../assets/icons/soundcloud.svg
+			.footer-app
+				p
+					a(href="https://apps.apple.com/app/apple-store/id728359509" class="footer-m-badge" target="_blank")
+						include ../assets/elements/app-store-et.svg
+					a(href="https://play.google.com/store/apps/details?id=ee.lhv.lhv&referrer=utm_source%3Dcorp%2520web%26utm_term%3Dmobilepage%26utm_campaign%3DMobilePage" class="footer-m-badge" target="_blank")
+						include ../assets/elements/google-play-et.svg
+			.row
+				.col-xs-12.col-md-10.col-md-offset-1.text-center
+					#disclaimer
+						.disclaimer
+							p(v-html="disclaimer")
 
+</template>
+</template>
 <script>
 export default {
-	name: 'Footer',
-	data() {
-		return {
-			menuLinks: [
+  name: 'Links',
+  data() {
+    return {
+      menuLinks: [
         {
-          label: 'TULE KLIENDIKS',
+          label: 'Tule kliendiks',
           submenu: [
             {
               label: 'Eraklient',
@@ -50,7 +70,7 @@ export default {
           ]
         },
         {
-          label: 'LEIA KIIRELT',
+          label: 'Leia kiirelt',
           submenu: [
             {
               label: 'Hinnakiri ja tingimused',
@@ -78,7 +98,7 @@ export default {
           ]
         },
         {
-          label: 'LHV',
+          label: 'Lhv',
           submenu: [
             {
               label: 'Ettevõttest',
@@ -103,7 +123,7 @@ export default {
           ]
         },
         {
-          label: 'KONTAKT',
+          label: 'Kontakt',
           submenu: [
             {
               label: 'Kontaktid',
@@ -124,13 +144,53 @@ export default {
             }
           ]
         }
-      ]
-		}
-	},
-
+      ],
+      disclaimer : "© 2001–2020 AS LHV Group, Tartu mnt 2, 10145, Tallinn. Oled finantsteenuseid pakkuvate ettevõtete AS LHV Pank, AS LHV Finance ja AS LHV Varahaldus veebilehel. Ettevõtetel AS LHV Pank, AS LHV Finance ja AS LHV Varahaldus on õigus salvestada kõiki neile sidevahendite teel antud korraldusi ja muud suhtlust ning kasutada vastavaid salvestisi antud korralduste või muude toimingute tõendamiseks. Enne finantsteenuse lepingu sõlmimist tutvu <a href='https://lhv.ee/et/tingimused-ja-hinnakiri'>teenuse tingimustega</a> või küsi lisainfot. Veebilehte ja sellel sisalduvat informatsiooni kasutades nõustud eeltoodud tingimuste ja veebilehe <a href='https://lhv.ee/et/veebilehe-kasutajatingimused'>kasutustingimustega</a>.<a href='https://lhv.ee/et/vaartpaberite-hinnainfo'>Noteeringud on viivitusega</a>."
+    }
+  }
 }
 </script>
+<style lang="stylus">
+#footer
+	position absolute
+	background #f8f8f8
+	font-size 12px
+	padding-top 40px
+	padding-bottom 30px
+	line-height 18px
+	right 0
+	left 0
+	bottom 0
+	h3
+		margin-top 0
+		margin-bottom 0
+		font-size 13px
+		line-height 26px
+		text-transform uppercase
+		color #909097
+		font-weight 500
+	.social
+		padding 1px
+		opacity 1
+		margin-right 18px
+		margin-top 8px
+		display inline-block
+	.footer-app
+		display inline-block
+		float right 
+	.footer-m-badge
+		margin 0 4px
+	.col-xs-12
+		width 100%
+	.disclaimer
 
-<style>
-
+		a
+			text-decoration underline
+	
+	.container
+		padding-right 15px
+		padding-left 15px
+		margin-right auto
+		margin-left auto
+	
 </style>
